@@ -12,10 +12,4 @@ def hello_world():
     if request_type_str == 'GET':
         return render_template('index.html')
     else:
-        mytype = request.form['selectype']
-        if mytype=='Box':
-            return render_template('index_hand.html')
-        elif mytype=='DragandDrop':
-            return render_template('html_drag.html')
-        else:
-            return render_template('index.html')
+        return render_template('index.html')
