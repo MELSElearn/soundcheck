@@ -10,7 +10,7 @@
 <div>Teachable Machine Audio Model</div>
 <button type="button" onclick="init()">Start</button>
 <div id="label-container"></div>
-<div id="image-container"></div>
+
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands@0.4.0/dist/speech-commands.min.js"></script>
 
@@ -44,12 +44,12 @@
         const recognizer = await createModel();
         const classLabels = recognizer.wordLabels(); // get class labels
         const labelContainer = document.getElementById("label-container");
-		const imageContainer = document.getElementById("image-container");
+	
 
         for (let i = 0; i < classLabels.length; i++) {
             labelContainer.appendChild(document.createElement("div"));
         }
-		imageContainer.appendChild(document.createElement("div"));
+	labelContainer.childNodes[0].innerHTML = "<font size='+5'>Try to say the letter A or B.</font>"	
 
         // listen() takes two arguments:
         // 1. A callback function that is invoked anytime a word is recognized.
